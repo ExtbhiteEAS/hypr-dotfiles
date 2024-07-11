@@ -1,0 +1,4 @@
+window.opacity = 0.74
+font.normal.family = "Terminus (TTF)"
+shell.program = "/bin/bash"
+shell.args = ["-c", "fastfetch && exec bash"]
