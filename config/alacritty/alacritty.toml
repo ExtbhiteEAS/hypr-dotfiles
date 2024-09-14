@@ -1,0 +1,15 @@
+# -- IMPORTS ------------------
+import = [
+    "~/.config/alacritty/catppuccin-mocha.toml"
+]
+# -----------------------------
+
+# -- CONSOLE WINDOW -----------
+window.opacity = 1.0
+colors.primary.background = "#1e1e2e"
+# -----------------------------
+
+font.normal.family = "Terminus (TTF)"
+font.size = 12.80
+shell.program = "/usr/bin/zsh"
+shell.args = ["-c", "sh ~/.config/alacritty/custom_print.sh && exec zsh"]
