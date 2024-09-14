@@ -7,27 +7,27 @@
     "host",
     "kernel",
     "uptime",
-    "packages",
+    //"packages",
     "shell",
     "display",
     "de",
     "wm",
-    "wmtheme",
-    "theme",
-    "icons",
-    "font",
-    "cursor",
+    //"wmtheme",
+    //"theme",
+    //"icons",
+    //"font",
+    //"cursor",
     "terminal",
     "terminalfont",
     "cpu",
     "gpu",
     "memory",
-    "swap",
+    //"swap",
     "disk",
-    // "localip",
-    "battery",
-    "poweradapter",
-    "locale",
+    //"localip",
+    //"battery",
+    //"poweradapter",
+    //"locale",
     "break",
     "colors"
     ],
@@ -35,6 +35,6 @@
         "color": {
             "1": "white"
         },
-        "source": "~/.local/share/fastfetch/frieren"
+        "source": "~/.local/share/fastfetch/nier_2b_2"
     }
 }
