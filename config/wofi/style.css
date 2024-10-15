@@ -4,30 +4,33 @@
 
 window {
     /* Font */
-    font-size: 18px;
-    font-family: 'Terminus (TTF)';
+    font-size: 16px;
+    font-family: 'Nunito';
 
     /* Options */
-    background-color: rgba(43, 43, 43, 0.95);
-    color: white;
+    background-color: #181825; /* rgba(26, 26, 26, 0.85) */
+    color: #cdd6f4;
 }
 
 /* ---------------------------------- */
-/* [-] ENTRY CONFIGURE [-]*/
+/* [-] ENTRY CONFIGURE [-] */
 /* ---------------------------------- */
 
 #entry:selected {
-    background-color: #b49c70;
+    background-color: #89b4fa;
 }
 #entry {
     padding: 8px;
+    margin: 0;
+    margin-left: 8px;
+    margin-right: 8px;
 }
 
 /* ---------------------------------- */
 
 #input {
-    background-color: rgba(43, 43, 43, 0.5);
-    color: #fff;
+    background-color: #313244;
+    color: #cdd6f4;
     margin: 5px;
     padding: 5px;
 }

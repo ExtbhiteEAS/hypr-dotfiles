@@ -1,0 +1,17 @@
+{
+    "discordBranch": "stable",
+    "tray": true,
+    "trayColor": "d81515",
+    "minimizeToTray": true,
+    "arRPC": true,
+    "trayMainOverride": false,
+    "splashColor": "rgb(205, 214, 244)",
+    "splashBackground": "rgb(30, 30, 46)",
+    "trayColorType": "default",
+    "trayAutoFill": "auto",
+    "clickTrayToShowHide": true,
+    "spellCheckLanguages": [
+        "ru",
+        "ru-RU"
+    ]
+}

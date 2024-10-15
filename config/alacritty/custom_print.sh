@@ -1,1 +1,0 @@
-source ~/.config/alacritty/.venv/bin/activate && python3 ~/.config/alacritty/custom_print.py

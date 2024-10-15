@@ -1,0 +1,5 @@
+2024/10/03-20:04:17.362 14ec Reusing MANIFEST /home/extbhite/.config/vesktop/sessionData/Local Storage/leveldb/MANIFEST-000001
+2024/10/03-20:04:17.366 14ec Recovering log #7417
+2024/10/03-20:04:17.367 14ec Level-0 table #7419: started
+2024/10/03-20:04:17.380 14ec Level-0 table #7419: 86931 bytes OK
+2024/10/03-20:04:17.384 14ec Delete type=0 #7417
