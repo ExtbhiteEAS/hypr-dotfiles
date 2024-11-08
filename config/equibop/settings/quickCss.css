@@ -1,8 +1,0 @@
-@import url("https://catppuccin.github.io/discord/dist/catppuccin-mocha.theme.css")
-(prefers-color-scheme: dark);
-
-/* For fakeProfile */
-[class*=SizeOuter] [class^=container] [class^=anchor] img,
-[class^=message] [class^=header] [class=custom-badge] img {
-    border-radius: 5px !important;
-}

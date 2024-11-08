@@ -31,11 +31,6 @@ window#waybar.termite {
     background-color: #3F3F3F;
 }
 
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
-}
-
 /* --------------------------------------- */
 /* ### MODULES CENTER ### */
 /* --------------------------------------- */
@@ -54,7 +49,7 @@ window#waybar.chromium {
 .modules-left {
     background-color: shade(@base, 0.9);
     padding: 0 9px;
-    padding-right: 10px;
+    padding-right: 0px;
     padding-left: 0;
     border-radius: 10px;
     margin-top: 4px;
@@ -62,7 +57,6 @@ window#waybar.chromium {
 }
 
 #custom-launch_wofi {
-    color: #ffffff;
     padding-left: 5px;
     padding-right: 10px;
     font-size: 15px;
@@ -93,14 +87,13 @@ window#waybar.chromium {
 
 #workspaces button:hover {
     background-color: shade(@blue, 0.9);
-    color: #ffffff;
     border-radius: 10px;
 }
 
-/*#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}*/
+#workspaces button:active {
+    background-color: shade(@blue, 0.9);
+    border-radius: 10px;
+}
 
 #workspaces button.urgent {
     background-color: #eb4d4b;
@@ -130,6 +123,11 @@ window#waybar.chromium {
     border-radius: 10px;
 }
 
+#custom-cava {
+    background-color: #6e8f83;
+    border-radius: 10px;
+}
+
 /* --------------------------------------- */
 
 
@@ -141,7 +139,7 @@ window#waybar.chromium {
     background-color: shade(@base, 0.9);
     padding: 0 9px;
     padding-right: 10px;
-    padding-left: 0;
+    padding-left: 5px;
     border-radius: 10px;
     margin-top: 4px;
     margin-right: 7px;
@@ -217,6 +215,7 @@ window#waybar.chromium {
 #pulseaudio {
     color: @text;
     padding-left: 10px;
+    padding-right: 10px;
     border-radius: 10px;
 }
 
@@ -245,6 +244,7 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#custom-cava,
 #clock,
 #disk,
 #network,

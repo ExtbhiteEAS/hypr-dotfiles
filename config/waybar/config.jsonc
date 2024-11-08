@@ -10,13 +10,13 @@
         "hyprland/workspaces",
 	    "tray",
         "cpu",
-        "memory"
+        "memory",
+        "custom/cava"
     ],
     "modules-center": [
         "clock"
     ],
     "modules-right": [
-        "mpd",
         "pulseaudio",
         "power-profiles-daemon",
         "temperature",
@@ -26,23 +26,6 @@
         "battery",
 	    "custom/logout_sys"
     ],
-    // Modules configuration
-    // "sway/workspaces": {
-    //     "disable-scroll": true,
-    //     "all-outputs": true,
-    //     "warp-on-scroll": false,
-    //     "format": "{name}: {icon}",
-    //     "format-icons": {
-    //         "1": "",
-    //         "2": "",
-    //         "3": "",
-    //         "4": "",
-    //         "5": "",
-    //         "urgent": "",
-    //         "focused": "",
-    //         "default": ""
-    //     }
-    // },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -52,20 +35,14 @@
             "unlocked": ""
         }
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
+    "hyprland/workspaces": {
+        "active-only": true,
+        "format": "{id}"
     },
     "wlr/taskbar": {
         "on-click": "activate",
-	"on-click-right": "minimize-raise",
-	"format": "{icon}"
+	    "on-click-right": "minimize-raise",
+	    "format": "{icon}"
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -92,6 +69,11 @@
         },
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "custom/cava": {
+        "exec": "~/.config/hypr/scripts/waybar_cava.sh",
+        "format": "{}",
+        "tooltip": false
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -169,11 +151,11 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon} ",
-        "format-full": "{capacity}% {icon} ",
-        "format-charging": "{capacity}%  ",
-        "format-plugged": "{capacity}%  ",
-        "format-alt": "{time} {icon} ",
+        "format": " {capacity}% {icon} ",
+        "format-full": " {capacity}% {icon} ",
+        "format-charging": " {capacity}%  ",
+        "format-plugged": " {capacity}%  ",
+        "format-alt": " {time} {icon} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
@@ -206,7 +188,7 @@
         "format": "{volume}% {icon}",
         "format-bluetooth": "{volume}% {icon}",
         "format-bluetooth-muted": " {icon}",
-        "format-muted": " {format_source}",
+        "format-muted": "  {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {

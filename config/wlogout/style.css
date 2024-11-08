@@ -4,25 +4,31 @@
 }
 
 window {
-	background-color: rgba(12, 12, 12, 0.9);
+	background-color: rgba(12, 12, 12, 0.644);
 }
 
 button {
     border-radius: 0;
-    border-color: black;
+    border-color: #000000;
 	text-decoration-color: #FFFFFF;
-    color: #FFFFFF;
-	background-color: #1E1E1E;
+    color: #cdd6f4;
+	background-color: #1e1e2e;
 	border-style: solid;
 	border-width: 1px;
+    border-radius: 15px;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 25%;
 }
 
-button:focus, button:active, button:hover {
-	background-color: #3700B3;
+button:focus, button:active {
+	background-color: #669687;
 	outline-style: none;
+}
+
+button:hover {
+	background-color: #2c413a;
+	border-color: #85c5b1;
 }
 
 #lock {
