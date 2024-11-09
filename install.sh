@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Значения
-LIBRARIES='base-devel git nodejs npm waybar waypaper wlogout zsh otf-font-awesome ttf-nunito thunar firefox wofi nwg-look steam fastfetch cava btop 7z swww kitty'
+LIBRARIES='base-devel git nodejs npm waybar waypaper wlogout zsh otf-font-awesome ttf-nunito thunar rofi nwg-look fastfetch cava btop 7z swww kitty'
 NVIDIA_LIBRARIES='nvidia-open-dkms egl-wayland nvidia-utils'
 YAY_LIBRARIES='gpu-screen-recorder hyprpicker-git hyprshot'
 
@@ -21,7 +21,7 @@ vencordInstall() {
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
     customClients
-    cd ~/
+    cd $HOME/
 }
 
 equicordInstall() {
@@ -30,31 +30,10 @@ equicordInstall() {
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
     customClients
-    cd ~/
+    cd $HOME/
 }
 
-main() {
-    clear
-    echo "[INFO] Установка основных библиотек..."
-    sudo pacman -S $LIBRARIES
-
-    echo "[INFO] Установка yay..."
-    git clone https://aur.archlinux.org/yay.git
-    cd yay
-    makepkg -si && cd ~/
-    
-    echo "[INFO] Установка библиотек из AUR..."
-    yay -S $YAY_LIBRARIES
-
-    while true; do
-        read -p "[ACTION] Ваш компьютер имеет видеокарту NVIDIA? [Y/N]: " yn
-        case $yn in
-            [Yy]* ) echo "[INFO] Идёт установка библиотек для NVIDIA..." && sudo pacman -S $NVIDIA_LIBRARIES; break;;
-            [Nn]* ) echo "[INFO] Простите, но мой dotfile не основан на видеокарте AMD, так как я вообще его делал под видеокарту NVIDIA, которая стоит у меня на ноутбуке. Если у вас будут графические проблемы, то простите - я ничего пока не смогу делать."; break;;
-            * ) echo "Ответьте: да или нет?";;
-        esac
-    done
-
+nvidiaConfiguring () {
     echo "[INFO] Дальше, теперь нам нужно подредактировать файл /etc/mkinitcpio.conf под NVIDIA."
     echo "[INFO] Где массив MODULES: нам нужно указать эти значение в скобках - nvidia nvidia_modeset nvidia_uvm nvidia_drm"
     echo "[INFO] Далее будет создан файл по пути /etc/modprobe.d/nvidia.conf только после редактирование, но там нужно будет указать: options nvidia_drm modeset=1 fbdev=1"
@@ -66,12 +45,47 @@ main() {
             * ) echo "Ответьте: да или нет?";;
         esac
     done
+}
 
-    discordInstall
+main() {
+    clear
+    echo "[INFO] Установка основных библиотек..."
+    sudo pacman -S $LIBRARIES
+
+    echo "[INFO] Установка yay..."
+    git clone https://aur.archlinux.org/yay.git
+    cd yay
+    makepkg -si && cd $HOME/
+    
+    echo "[INFO] Установка библиотек из AUR..."
+    yay -S $YAY_LIBRARIES
+
+    while true; do
+        read -p "[ACTION] Ваш компьютер имеет видеокарту NVIDIA? [Y/N]: " yn
+        case $yn in
+            [Yy]* ) echo "[INFO] Идёт установка библиотек для NVIDIA..." && sudo pacman -S $NVIDIA_LIBRARIES && nvidiaConfiguring; break;;
+            [Nn]* ) echo "[INFO] Простите, но мой dotfile не основан на видеокарте AMD, так как я вообще его делал под видеокарту NVIDIA, которая стоит у меня на ноутбуке. Если у вас будут графические проблемы, то простите - я ничего пока не смогу делать."; break;;
+            * ) echo "Ответьте: да или нет?";;
+        esac
+    done
+
+    while true; do
+        read -p "[ACTION] Желаете ли установить модифицированные клиенты Discord'a? [Y/N]: " yn
+        echo "[ACTION] P.S У меня Equibop заточен под горячие клавиши как: Super + Shift + E, но его можно убрать при своём усмотрении."
+        case $yn in
+            [Yy]* ) discordInstall; break;;
+            [Nn]* ) echo "[INFO] Установка модифицированного клиента Discord - пропущен."; break;;
+        esac
+    done
+
+    echo "[INFO] Копируем файлы конфигурации и вставляем в ваши."
+    cp -r config/* $XDG_CONFIG_HOME/
+
+    echo "[INFO] Установка завершена!"
 }
 
 echo "[INFO] Прежде чем начать установку этого dotfile: сделайте сохранение(бэкап) своих старых конфигураций и прочее, если возникнут проблемы с установкой - нужно это делать с чистой ОС."
-echo "[INFO] Сам dotfile для Hyprland был сделан на Arch Linux. Так что, если у Вы пытаетесь установить этот dotfile и встретите ошибку связанный с pacman - не стоит."
+echo "[INFO] Сам dotfile для Hyprland был сделан на Arch Linux. Так что, если Вы пытаетесь установить этот dotfile и встретите ошибку связанный с pacman - не стоит."
 echo "[INFO] Также, убедитесь что locale стоит на ru_RU.UTF-8 UTF-8, ибо есть пути папок, которые будут на русском благодаря Thunar. Изучить об этом можно тут: https://wiki.archlinux.org/title/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)"
 while true; do
     read -p "[ACTION] Вы уверены, то что хотите установить этот dotfile? [Y/N]: " yn
