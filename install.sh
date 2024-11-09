@@ -3,7 +3,7 @@
 # Значения
 LIBRARIES='base-devel git nodejs npm waybar waypaper wlogout zsh otf-font-awesome ttf-nunito thunar rofi nwg-look fastfetch cava btop 7z swww kitty'
 NVIDIA_LIBRARIES='nvidia-open-dkms egl-wayland nvidia-utils' # Тут только для новых, для старых я не знаю.
-YAY_LIBRARIES='gpu-screen-recorder hyprpicker-git hyprshot'
+YAY_LIBRARIES='gpu-screen-recorder hyprpicker hyprshot'
 
 discordInstall() {
     echo "[ACTION] Теперь установим Discord, который у нас будет модифицированным. Выберите, какой хотите, разница лишь в количестве плагина и функционала."
