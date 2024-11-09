@@ -1,8 +1,5 @@
 # vim:ft=conf
 
-# Main
-#startup_session launch.conf
-
 # Theme
 # ==============================
 ## name:     Catppuccin Kitty Mocha
@@ -11,8 +8,8 @@
 
 # The basic colors
 foreground              #cdd6f4
-background              #181825
-selection_foreground    #181825
+background              #1e1e2e
+selection_foreground    #1e1e2e
 selection_background    #f5e0dc
 
 # Cursor colors
@@ -84,16 +81,9 @@ color15 #a6adc8
 
 # Font
 # ==============================
-# font_family Nunito
-# bold_font auto
-# italic_font auto
-# bold_italic_font auto
+font_family Nunito
+bold_font auto
+italic_font auto
+bold_italic_font auto
 font_size 11.00
 # ==============================
-
-# BEGIN_KITTY_FONTS
-font_family      family="SourceCodeVF"
-bold_font        auto
-italic_font      auto
-bold_italic_font auto
-# END_KITTY_FONTS
