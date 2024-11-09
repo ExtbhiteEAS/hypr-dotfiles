@@ -2,7 +2,7 @@
 
 # Значения
 LIBRARIES='base-devel git nodejs npm waybar waypaper wlogout zsh otf-font-awesome ttf-nunito thunar rofi nwg-look fastfetch cava btop 7z swww kitty'
-NVIDIA_LIBRARIES='nvidia-open-dkms egl-wayland nvidia-utils'
+NVIDIA_LIBRARIES='nvidia-open-dkms egl-wayland nvidia-utils' # Тут только для новых, для старых я не знаю.
 YAY_LIBRARIES='gpu-screen-recorder hyprpicker-git hyprshot'
 
 discordInstall() {
@@ -45,6 +45,17 @@ nvidiaConfiguring () {
             * ) echo "Ответьте: да или нет?";;
         esac
     done
+
+    while true; do
+        echo "[INFO] К сожалению, Hyprland не поддерживает оборудование от NVIDIA."
+        echo "[INFO] Потому стоит отметить, то что по пути .config/hypr/extra/environment.conf хранятся значение, которые полезны для видеокарт NVIDIA."
+        read -p "[ACTION] Вы готовы редактировать файл и раскомментировать необходимые для вашей карты значение? [Y/N]: " yn
+        case $yn in
+            [Yy]* ) nano $XDG_CONFIG_HOME/hypr/extra/environment.conf; break;;
+            [Nn]* ) echo "[WARN] Как уже было сказано, то что Hyprland не поддерживает оборудование от NVIDIA. Потому стоит прочитать это: https://wiki.hyprland.org/Nvidia/"; break;;
+            * ) echo "Ответьте: да или нет?";;
+        esac
+    done
 }
 
 main() {
@@ -59,6 +70,9 @@ main() {
     
     echo "[INFO] Установка библиотек из AUR..."
     yay -S $YAY_LIBRARIES
+
+    echo "[INFO] Копируем файлы конфигурации и вставляем в ваши."
+    cp -r config/* $XDG_CONFIG_HOME/
 
     while true; do
         read -p "[ACTION] Ваш компьютер имеет видеокарту NVIDIA? [Y/N]: " yn
@@ -77,9 +91,6 @@ main() {
             [Nn]* ) echo "[INFO] Установка модифицированного клиента Discord - пропущен."; break;;
         esac
     done
-
-    echo "[INFO] Копируем файлы конфигурации и вставляем в ваши."
-    cp -r config/* $XDG_CONFIG_HOME/
 
     echo "[INFO] Установка завершена!"
 }
