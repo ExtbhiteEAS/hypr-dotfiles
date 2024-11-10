@@ -7,24 +7,24 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-        "hyprland/workspaces",
-	    "tray",
+	"tray",
+        "custom/cava",
         "cpu",
-        "memory",
-        "custom/cava"
+        "memory"
     ],
     "modules-center": [
+        "hyprland/window",
+        "hyprland/workspaces",
         "clock"
     ],
     "modules-right": [
         "pulseaudio",
         "power-profiles-daemon",
         "temperature",
-	    "backlight",
         "keyboard-state",
-	    "network",
+	"network",
         "battery",
-	    "custom/logout_sys"
+	"custom/logout_sys"
     ],
     "keyboard-state": {
         "numlock": true,
@@ -36,7 +36,7 @@
         }
     },
     "hyprland/workspaces": {
-        "active-only": true,
+        "active-only": false,
         "format": "{id}"
     },
     "wlr/taskbar": {
@@ -75,6 +75,10 @@
         "format": "{}",
         "tooltip": false
     },
+    "custom/separator": {
+        "format": " | ",
+        "tooltip": false
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
@@ -88,12 +92,12 @@
         "tooltip": false
     },
     "custom/logout_sys": {
-        "format": "",
+        "format": "󰣇",
         "on-click": "wlogout",
         "tooltip": false
     },
     "hyprland/window": {
-    	"max-length": 50
+    	"format": "    {initialClass}  "
     },
     "tray": {
         // "icon-size": 21,
@@ -127,10 +131,10 @@
             }
     },
     "cpu": {
-        "format": "  :  {usage}%"
+        "format": "   :  {usage}%"
     },
     "memory": {
-        "format": "  :  {}%"
+        "format": "   :  {}%"
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -185,11 +189,11 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
         "format-bluetooth-muted": " {icon}",
         "format-muted": "  {format_source}",
-        "format-source": "{volume}% ",
+        "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
@@ -198,8 +202,10 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": [" ", " ", " "]
         },
+        "tooltip-format": "Громкость: {volume}%",
+        "tooltip": true,
         "on-click": "pavucontrol"
     },
     "custom/media": {

@@ -1,11 +1,15 @@
 #!/bin/sh
 
 # Значения
-LIBRARIES='base-devel git nodejs npm waybar waypaper wlogout zsh otf-font-awesome ttf-nunito thunar rofi nwg-look fastfetch cava btop 7z swww kitty'
+LIBRARIES='base-devel git waybar zsh otf-font-awesome ttf-nunito ttf-jetbrains-mono-nerd thunar rofi nwg-look fastfetch cava btop 7z swww kitty'
 NVIDIA_LIBRARIES='nvidia-open-dkms egl-wayland nvidia-utils' # Тут только для новых, для старых я не знаю.
-YAY_LIBRARIES='gpu-screen-recorder hyprpicker hyprshot'
+YAY_LIBRARIES='wlogout waypaper gpu-screen-recorder hyprpicker hyprshot zen-browser-bin'
 
 discordInstall() {
+    echo "[INFO] Устанавливаем Node.JS v20.18.0 LTS..."
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+    nvm install 20
+
     echo "[ACTION] Теперь установим Discord, который у нас будет модифицированным. Выберите, какой хотите, разница лишь в количестве плагина и функционала."
     select ve in "Vencord" "Equicord"; do
         case $ve in
@@ -21,7 +25,7 @@ vencordInstall() {
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
     customClients
-    cd $HOME/
+    cd .
 }
 
 equicordInstall() {
@@ -30,7 +34,7 @@ equicordInstall() {
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
     customClients
-    cd $HOME/
+    cd .
 }
 
 nvidiaConfiguring () {
@@ -66,7 +70,7 @@ main() {
     echo "[INFO] Установка yay..."
     git clone https://aur.archlinux.org/yay.git
     cd yay
-    makepkg -si && cd $HOME/
+    makepkg -si && cd .
     
     echo "[INFO] Установка библиотек из AUR..."
     yay -S $YAY_LIBRARIES
