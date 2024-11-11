@@ -23,7 +23,8 @@ class HyprSettings:
                 s_option, s_index = pick(
                     [
                         'Искорка (Honkai: Star Rail)',
-                        'Светлячок (Honkai: Star Rail)'
+                        'Светлячок (Honkai: Star Rail)',
+                        'Россия'
                     ],
                     self.title,
                     multiselect = False,
@@ -39,6 +40,12 @@ class HyprSettings:
                     case 1:
                         try:
                             ChangeTo("firefly")
+                        except Exception as e:
+                            print(e)
+                            time.sleep(5)
+                    case 2:
+                        try:
+                            ChangeTo("russia")
                         except Exception as e:
                             print(e)
                             time.sleep(5)

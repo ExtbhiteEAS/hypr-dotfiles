@@ -1,5 +1,4 @@
 import os
-import json
 
 def get_settings():
     return {
@@ -27,6 +26,7 @@ def ChangeTo(var_style: str):
     for path, path_2 in zip(paths, paths_2):
         os.system(f"cp {path} {path_2}")
 
+    os.system(f"cp {main_path}/hyprlock.conf ~/.config/hypr/hyprlock.conf")
     os.system(f"cp {main_path}/rofi/config.rasi ~/.config/rofi/config.rasi")
     #os.system(f"cp {main_path}/zen/userChrome.css ~/.zen/{get_settings()['zenProfile']}/chrome/userChrome.css")
     #os.system(f"cp {main_path}/zen/userContent.css ~/.zen/{get_settings()['zenProfile']}/chrome/userContent.css")

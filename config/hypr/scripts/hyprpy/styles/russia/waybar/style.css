@@ -1,0 +1,97 @@
+@import "mocha.css";
+
+* {
+    font-family: "Nunito", "JetBrains Mono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(0, 0, 0, 0);
+    color: @text;
+}
+
+/* --------------------------------------- */
+/* ### MODULES POSITIONS ### */
+/* --------------------------------------- */
+.modules-center,
+.modules-right,
+.modules-left {
+    background-color: shade(@crust, 0.9);
+    padding: 0 10px;
+    margin-top: 4px;
+    margin-left: 7px;
+    margin-right: 7px;
+    border-radius: 10px;
+    border: 2px solid #bac2de;
+}
+/* --------------------------------------- */
+
+/* --------------------------------------- */
+/* ### MODULES ### */
+/* --------------------------------------- */
+#tray,
+#custom-cava,
+#cpu,
+#memory,
+#clock,
+#workspaces,
+#pulseaudio,
+#temperature,
+#backlight,
+#network,
+#battery,
+#custom-logout_sys {
+    color: @text;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+#tray,
+#workspaces,
+#network,
+#battery {
+    background-color: shade(@base, 0.9);
+}
+
+#custom-logout_sys {
+    font-size: 20px;
+}
+
+#network.disconnected {
+    background-color: shade(@red, 0.9);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: shade(@red, 0.9);
+}
+
+#workspaces button {
+    color: @text;
+}
+#workspaces button:hover,
+#workspaces button:active {
+    background-color: #bac2de;
+}
+
+#battery.critical:not(.charging) {
+    background-color: shade(@red, 0.9);
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#temperature {
+    color: @peach;
+}
+#temperature.critical {
+    color: @red;
+}
+
+/* --------------------------------------- */
