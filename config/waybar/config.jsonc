@@ -97,7 +97,7 @@
         "tooltip": false
     },
     "hyprland/window": {
-    	"format": "    {initialClass}  "
+    	"format": "   :  {initialClass}  "
     },
     "tray": {
         // "icon-size": 21,

@@ -1,0 +1,1 @@
+source ~/.config/hypr/scripts/hyprpy/venv/bin/activate && python3 ~/.config/hypr/scripts/hyprpy/settings.py
