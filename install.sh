@@ -24,6 +24,7 @@ vencordInstall() {
     cd $VENCORD_DIRECTORY && sudo npm i -g pnpm && pnpm i
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
+    cd .. & cd ..
     customClients
     cd ..
 }
@@ -33,6 +34,7 @@ equicordInstall() {
     cd $EQUICORD_DIRECTORY && sudo npm i -g pnpm && pnpm i
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
+    cd .. & cd ..
     customClients
     cd ..
 }
@@ -75,9 +77,6 @@ main() {
     echo "[INFO] Установка библиотек из AUR..."
     yay -S $YAY_LIBRARIES
 
-    echo "[INFO] Копируем файлы конфигурации и вставляем в ваши."
-    cp -r config/* $XDG_CONFIG_HOME/
-
     while true; do
         read -p "[ACTION] Ваш компьютер имеет видеокарту NVIDIA? [Y/N]: " yn
         case $yn in
@@ -95,6 +94,9 @@ main() {
             [Nn]* ) echo "[INFO] Установка модифицированного клиента Discord - пропущен."; break;;
         esac
     done
+
+    echo "[INFO] Копируем файлы конфигурации и вставляем в ваши."
+    cp -r config/* $XDG_CONFIG_HOME/
 
     echo "[INFO] Установка завершена!"
 }
