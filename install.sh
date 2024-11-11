@@ -25,7 +25,7 @@ vencordInstall() {
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
     customClients
-    cd .
+    cd ..
 }
 
 equicordInstall() {
@@ -34,7 +34,7 @@ equicordInstall() {
     cd src/ && mkdir userplugins
     cd userplugins/ && git clone $FAKEPROFILE_URL && pnpm build
     customClients
-    cd .
+    cd ..
 }
 
 nvidiaConfiguring () {
@@ -70,7 +70,7 @@ main() {
     echo "[INFO] Установка yay..."
     git clone https://aur.archlinux.org/yay.git
     cd yay
-    makepkg -si && cd .
+    makepkg -si && cd ..
     
     echo "[INFO] Установка библиотек из AUR..."
     yay -S $YAY_LIBRARIES
