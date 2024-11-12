@@ -7,9 +7,13 @@
 ___
 
 # Заголовки
+- [Важно](#важно)
 - [О конфигурации](#о-конфигурации)
 - [Установка](#установка)
 - [Вопросы и ответы](#вопросы-и-ответы)
+
+## Важно
+- Прежде чем начать установку данной конфигурации Hyprland: сделайте сохранение(бэкап) своих старых конфигураций и прочее, если возникнут проблемы с установкой - нужно это делать с чистой ОС, сама конфигурация для Hyprland была сделана в Arch Linux. Так что, если Вы пытаетесь установить эту конфигурацию на другом дистрибутиве и встретите ошибку связанный с pacman - то у Вас не Arch Linux. Также, убедитесь что locale стоит на `ru_RU.UTF-8 UTF-8`, ибо есть пути папок, которые будут на русском. Изучить о locale можно тут: https://wiki.archlinux.org/title/Locale_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9).
 
 ## О конфигурации
 Сама конфигурация представляет следующее, что может существовать из возможного:
@@ -24,10 +28,13 @@ ___
 >[!NOTE]
 > Установку рекомендуется делать на чистом ОС как и Hyprland, если вы уже ранее редактировали свой, то лучше стоит сделать бэкап своих конфигураций(то есть, полностью сделать сохранение папки `.config/`) если что-то может пойти не так.
 
-- Установить мою конфигурацию можно командой: ```git clone https://github.com/ExtbhiteEAS/hypr-dotfiles.git && cd hypr-dotfiles && sh install.sh```
+- Установить мою конфигурацию можно командой:
+```bash
+git clone https://github.com/ExtbhiteEAS/hypr-dotfiles.git && cd hypr-dotfiles && chmod +x install.sh && ./install.sh
+```
 - Установить можно и руками:
-    - Установите необходимые зависимости для корректной работы этой конфигурации: ```sudo pacman -S base-devel git waybar zsh otf-font-awesome ttf-nunito ttf-jetbrains-mono-nerd thunar rofi nwg-look fastfetch cava btop 7z swww kitty```;
-        - Также и пользовательские через AUR(`yay`): ```yay -S wlogout waypaper gpu-screen-recorder hyprpicker hyprshot zen-browser-bin```;
+    - Установите необходимые зависимости для корректной работы этой конфигурации: `sudo pacman -S base-devel git waybar zsh otf-font-awesome ttf-nunito ttf-jetbrains-mono-nerd thunar rofi nwg-look fastfetch cava btop 7z swww kitty`
+        - Также и пользовательские через AUR(`yay`): `yay -S wlogout waypaper gpu-screen-recorder hyprpicker hyprshot zen-browser-bin`;
     - Скачать файлы из репозиториию;
     - Вставить файлы из папки `config/` в вашу папку с конфигурацией: `.config/`. И всё.
 
