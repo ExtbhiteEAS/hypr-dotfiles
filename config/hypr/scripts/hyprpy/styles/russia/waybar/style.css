@@ -76,6 +76,7 @@ window#waybar {
 #workspaces button:hover,
 #workspaces button:active {
     background-color: #bac2de;
+    color: black;
 }
 
 #battery.critical:not(.charging) {

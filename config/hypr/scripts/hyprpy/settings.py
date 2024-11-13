@@ -11,43 +11,35 @@ class HyprSettings:
 """
     
     def start(self):
-        d_option, d_index = pick(
-            ['Изменить стиль'],
-            self.title,
-            multiselect = False,
-            min_selection_count = 1
-        )
+        try:
+            d_option, d_index = pick(
+                ['Изменить стиль'],
+                self.title,
+                multiselect = False,
+                min_selection_count = 1
+            )
 
-        match d_index:
-            case 0:
-                s_option, s_index = pick(
-                    [
-                        'Искорка (Honkai: Star Rail)',
-                        'Светлячок (Honkai: Star Rail)',
-                        'Россия'
-                    ],
-                    self.title,
-                    multiselect = False,
-                    min_selection_count = 1
-                )
-                match s_index:
-                    case 0:
-                        try:
+            match d_index:
+                case 0:
+                    s_option, s_index = pick(
+                        [
+                            'Искорка (Honkai: Star Rail)',
+                            'Светлячок (Honkai: Star Rail)',
+                            'Россия'
+                        ],
+                        self.title,
+                        multiselect = False,
+                        min_selection_count = 1
+                    )
+                    match s_index:
+                        case 0:
                             ChangeTo("sparkle")
-                        except Exception as e:
-                            print(e)
-                            time.sleep(5)
-                    case 1:
-                        try:
+                        case 1:
                             ChangeTo("firefly")
-                        except Exception as e:
-                            print(e)
-                            time.sleep(5)
-                    case 2:
-                        try:
+                        case 2:
                             ChangeTo("russia")
-                        except Exception as e:
-                            print(e)
-                            time.sleep(5)
+        except Exception as e:
+            print(e)
+            time.sleep(5)
 
 HyprSettings().start()
