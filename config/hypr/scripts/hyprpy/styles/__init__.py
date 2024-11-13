@@ -1,5 +1,7 @@
 import os
 
+from styles import metadata
+
 def get_settings():
     return {
         "zenProfile": "sota08zo.Default (alpha\\)"
@@ -31,6 +33,6 @@ def ChangeTo(var_style: str):
     #os.system(f"cp {main_path}/zen/userChrome.css ~/.zen/{get_settings()['zenProfile']}/chrome/userChrome.css")
     #os.system(f"cp {main_path}/zen/userContent.css ~/.zen/{get_settings()['zenProfile']}/chrome/userContent.css")
     
-    os.system(f"swww img ~/Изображения/wallpapers/{var_style}.jpg --transition-type grow --transition-pos \"$(hyprctl cursorpos)\" --transition-duration 3")
+    os.system(f"swww img ~/Изображения/wallpapers/{var_style}.jpg --transition-fps 144 --transition-type grow --transition-pos \"$(hyprctl cursorpos)\" --transition-duration 3")
     os.system("killall dunst && killall -SIGUSR2 waybar")
-    os.system(f"notify-send -t 1500 \"Настройки\" \"Тема была изменена на: {var_style}\"")
+    os.system(f"notify-send -t 1500 \"Настройки\" \"Тема была изменена на: {metadata.style_names[f'{var_style}']}\"")

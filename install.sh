@@ -27,11 +27,11 @@ nvidiaConfiguring () {
     done
 
     while true; do
-        echo "[INFO] Про .config/hypr/extra/environment.conf стоит прочитать в README.md"
+        echo "[INFO] Про .config/hypr/extra/environment.conf стоит прочитать в README."
         read -p "[ACTION] Вы готовы редактировать файл .config/hypr/extra/environment.conf и раскомментировать необходимые для вашей карты значение? [Y/N]: " yn
         case $yn in
             [Yy]* ) nano $HOME/.config/hypr/extra/environment.conf; break;;
-            [Nn]* ) echo "[WARN] Как уже было сказано, то что Hyprland не поддерживает оборудование от NVIDIA. Потому стоит прочитать это: https://wiki.hyprland.org/Nvidia/"; break;;
+            [Nn]* ) echo "[WARN] Как уже было сказано, то что Hyprland не поддерживает оборудование от NVIDIA. Потому стоит прочитать README."; break;;
             * ) echo "Ответьте: да или нет?";;
         esac
     done
@@ -61,7 +61,7 @@ main() {
 
     while true; do
         read -p "[ACTION] Желаете ли установить модифицированные клиенты Discord'a? [Y/N]: " yn
-        echo "[ACTION] P.S У меня Equibop заточен под горячие клавиши как: Super + Shift + E, но его можно убрать при своём усмотрении."
+        echo "[INFO] P.S У меня Equibop заточен под горячие клавиши как: Super + Shift + E, но его можно убрать при своём усмотрении."
         case $yn in
             [Yy]* ) discordInstall; break;;
             [Nn]* ) echo "[INFO] Установка модифицированного клиента Discord - пропущен."; break;;
