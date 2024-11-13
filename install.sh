@@ -27,9 +27,8 @@ nvidiaConfiguring () {
     done
 
     while true; do
-        echo "[INFO] К сожалению, Hyprland не поддерживает оборудование от NVIDIA."
-        echo "[INFO] Потому стоит отметить, то что по пути .config/hypr/extra/environment.conf хранятся значение, которые полезны для видеокарт NVIDIA."
-        read -p "[ACTION] Вы готовы редактировать файл и раскомментировать необходимые для вашей карты значение? [Y/N]: " yn
+        echo "[INFO] Про .config/hypr/extra/environment.conf стоит прочитать в README.md"
+        read -p "[ACTION] Вы готовы редактировать файл .config/hypr/extra/environment.conf и раскомментировать необходимые для вашей карты значение? [Y/N]: " yn
         case $yn in
             [Yy]* ) nano $HOME/.config/hypr/extra/environment.conf; break;;
             [Nn]* ) echo "[WARN] Как уже было сказано, то что Hyprland не поддерживает оборудование от NVIDIA. Потому стоит прочитать это: https://wiki.hyprland.org/Nvidia/"; break;;
