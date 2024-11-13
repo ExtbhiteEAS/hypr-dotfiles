@@ -1,4 +1,5 @@
 <div align="center">
+    <img src="/assets/preview.png"></img>
     <h1>Hypr-Dotfiles</h1>
     Моя собственная конфигурация для Hyprland на Arch Linux.
     <br>
