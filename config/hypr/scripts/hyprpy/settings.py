@@ -36,6 +36,10 @@ class HyprSettings:
                             ChangeTo("russia")
                         case 3:
                             ChangeTo("russia_slav")
+                        case 4:
+                            ChangeTo("dragon_fight")
+                        case 5:
+                            ChangeTo("ruins")
         except Exception as e:
             print(e)
             time.sleep(5)
