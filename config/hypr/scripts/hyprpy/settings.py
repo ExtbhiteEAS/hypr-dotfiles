@@ -11,14 +11,17 @@ class HyprSettings:
 """
     
     def start(self):
-        try:
-            d_option, d_index = pick(
-                ['Изменить стиль'],
-                self.title,
-                multiselect = False,
-                min_selection_count = 1
-            )
+        d_option, d_index = pick(
+            [
+                'Изменить стиль',
+                'Закрыть'
+            ],
+            self.title,
+            multiselect = False,
+            min_selection_count = 1
+        )
 
+        try:
             match d_index:
                 case 0:
                     s_option, s_index = pick(
@@ -29,19 +32,21 @@ class HyprSettings:
                     )
                     match s_index:
                         case 0:
-                            ChangeTo("sparkle")
+                            ThemeChanger('sparkle').change()
                         case 1:
-                            ChangeTo("firefly")
+                            ThemeChanger('firefly').change()
                         case 2:
-                            ChangeTo("russia")
+                            ThemeChanger('russia').change()
                         case 3:
-                            ChangeTo("russia_slav")
+                            ThemeChanger('russia_slav').change()
                         case 4:
-                            ChangeTo("dragon_fight")
+                            ThemeChanger('dragon_fight').change()
                         case 5:
-                            ChangeTo("ruins")
+                            ThemeChanger('ruins').change()
+                case 1:
+                    exit(0)
         except Exception as e:
             print(e)
-            time.sleep(5)
+            time.sleep(7)
 
 HyprSettings().start()
