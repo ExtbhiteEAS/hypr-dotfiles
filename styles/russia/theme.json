@@ -1,0 +1,16 @@
+{
+    "dunst": {
+        "frame_color": "#bac2de"
+    },
+    "extra/variables": {
+        "active_border": "rgb(bac2de) rgb(bac2de) 45deg"
+    },
+    "fastfetch": "~/.config/fastfetch/russian_orthodox_cross.png",
+    "rofi": "#bac2de",
+    "waybar": "#bac2de",
+    "wlogout": {
+        "focus-active": "#878da1",
+        "hover": "#585b70"
+    },
+    "hyprlock": "rgb(bac2de)"
+}
