@@ -58,6 +58,10 @@ window#waybar {
     font-size: 20px;
 }
 
+#network {
+    padding-right: 16px;
+}
+
 #network.disconnected {
     background-color: shade(@red, 0.9);
 }
@@ -75,7 +79,8 @@ window#waybar {
 }
 #workspaces button:hover,
 #workspaces button:active {
-    background-color: shade(@red, 0.9);
+    background-color: #bac2de;
+    color: black;
 }
 
 #battery.critical:not(.charging) {

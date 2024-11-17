@@ -14,4 +14,4 @@ configuration{
     sidebar-mode: true;
 }
 
-@theme "~/.config/rofi/theme_sparkle.rasi"
+@theme "~/.config/rofi/theme.rasi"

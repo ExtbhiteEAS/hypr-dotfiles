@@ -7,7 +7,7 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
-	"tray",
+	    "tray",
         "custom/cava",
         "cpu",
         "memory"
@@ -22,9 +22,9 @@
         "power-profiles-daemon",
         "temperature",
         "keyboard-state",
-	"network",
+	    "network",
         "battery",
-	"custom/logout_sys"
+	    "custom/logout_sys"
     ],
     "keyboard-state": {
         "numlock": true,
@@ -168,24 +168,26 @@
         "bat": "BAT2"
     },
     "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
+        "interval": 1,
+        "format-wifi": "󰖩",
+        "format-ethernet": "",
         "tooltip-format": "{ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-disconnected": "",
+        "tooltip-format-disconnected": "Internet disconnected",
+        "format-alt": "{bandwidthUpBytes}    {bandwidthDownBytes} "
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
