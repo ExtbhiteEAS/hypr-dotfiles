@@ -23,7 +23,7 @@ def proccess():
     print("[INFO] Модифицированные клиенты Discord:\n1. Vencord\n2. Equicord\n")
 
     while choose_loop:
-        mod_client_choose = int(input('[ACTION] Выберите модифицированный клиент : '))
+        mod_client_choose = int(input('[ACTION] Выберите модифицированный клиент по своему желанию : '))
 
         match mod_client_choose:
             case 1:
@@ -32,7 +32,7 @@ def proccess():
             case 2:
                 install(urls['Equicord'], 'Equicord/')
                 choose_loop = False; break
-            case 0:
+            case _:
                 print('[WARN] Неверный выбор модифицированного клиента.')
 
 proccess()
