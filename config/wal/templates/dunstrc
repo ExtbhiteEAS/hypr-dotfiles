@@ -1,0 +1,27 @@
+[global]
+    monitor = 0
+    follow = none
+    width = 400
+    height = 400
+    origin = top-center
+    offset = 10x15
+    scale = 2
+    transparency = 0
+    font = Nunito SemiBold 8
+    frame_width = 2
+    frame_color = "{color8}"
+    corner_radius = 10
+    separator_color = frame
+
+[urgency_low]
+    background = "{background}"
+    foreground = "{foreground}"
+
+[urgency_normal]
+    background = "{background}"
+    foreground = "{foreground}"
+
+[urgency_critical]
+    background = "{background}"
+    foreground = "{foreground}"
+    frame_color = "#fab387"

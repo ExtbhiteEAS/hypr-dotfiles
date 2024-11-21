@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # Значения
-LIBRARIES='base-devel git waybar zsh otf-font-awesome ttf-nunito ttf-jetbrains-mono-nerd thunar rofi nwg-look fastfetch cava btop 7z swww kitty'
+LIBRARIES='base-devel git waybar zsh otf-font-awesome ttf-nunito ttf-jetbrains-mono-nerd rofi nwg-look fastfetch cava btop 7z swww kitty nemo nemo-fileroller nemo-preview xdg-desktop-portal-hyprland'
 NVIDIA_LIBRARIES='nvidia-open-dkms egl-wayland nvidia-utils' # Тут только для новых, для старых я не знаю.
-YAY_LIBRARIES='wlogout waypaper gpu-screen-recorder hyprpicker hyprshot zen-browser-bin'
+YAY_LIBRARIES='wlogout waypaper gpu-screen-recorder hyprpicker hyprshot hyprutils zen-browser-bin rofi-emoji-git'
 
 discordInstall() {
     echo "[INFO] Устанавливаем Node.JS v20.18.0 LTS..."
@@ -70,6 +70,8 @@ main() {
 
     echo "[INFO] Копируем файлы конфигурации и вставляем в ваши."
     cp -r config/* $HOME/.config/
+    mkdir $HOME/.styles/
+    cp -r styles/* $HOME/.styles/
 
     echo "[INFO] Установка завершена!"
 }

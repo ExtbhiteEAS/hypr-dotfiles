@@ -36,10 +36,12 @@ ___
 git clone https://github.com/ExtbhiteEAS/hypr-dotfiles.git && cd hypr-dotfiles && chmod +x install.sh && ./install.sh
 ```
 - Установить можно и руками:
-    - Установите необходимые зависимости для корректной работы этой конфигурации: `sudo pacman -S base-devel git waybar zsh otf-font-awesome ttf-nunito ttf-jetbrains-mono-nerd thunar rofi nwg-look fastfetch cava btop 7z swww kitty`
-        - Также и пользовательские через AUR(`yay`): `yay -S wlogout waypaper gpu-screen-recorder hyprpicker hyprshot zen-browser-bin`;
+    - Установите необходимые зависимости для корректной работы этой конфигурации: `sudo pacman -S base-devel git waybar zsh otf-font-awesome ttf-nunito ttf-jetbrains-mono-nerd rofi nwg-look fastfetch cava btop 7z swww kitty nemo nemo-fileroller nemo-preview xdg-desktop-portal-hyprland`
+    - Также и пользовательские через AUR(`yay`): `yay -S wlogout waypaper gpu-screen-recorder hyprpicker hyprshot hyprutils zen-browser-bin rofi-emoji-git`;
     - Скачать файлы из репозиториию;
-    - Вставить файлы из папки `config/` в вашу папку с конфигурацией: `.config/`. И всё.
+    - Вставить файлы из папки `config/` в вашу папку с конфигурацией: `.config/`;
+    - Рекомендуется также создать в домашней папке новую папку с названием `.styles`, и из `styles` перенести в созданную папку в домашней папке;
+    - Обои из `wallpapers` стоит вставлять в `~/Изображения/wallpapers/`, ибо путь по смене обоев именно под него заточено.
 
 ## Демонстрации
 - Демонстрации данной конфигурации можно посмотреть тут: [demo/](./assets/demo/)
