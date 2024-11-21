@@ -1,3 +1,5 @@
+@import url("/home/extbhite/.cache/wal/wlogout-theme.css");
+
 * {
     background-image: none;
     box-shadow: none;
@@ -11,8 +13,8 @@ button {
     border-radius: 0;
     border-color: #000000;
     text-decoration-color: #FFFFFF;
-    color: #cdd6f4;
-    background-color: #11111b;
+    color: @foreground;
+    background-color: @background;
     border-style: solid;
     border-width: 1px;
     border-radius: 15px;
@@ -23,13 +25,13 @@ button {
 }
 
 button:focus, button:active {
-    background-color: #F4757E;
+    background-color: @color1;
     outline-style: none;
 }
 
 button:hover {
-    background-color: #A93F59;
-    border-color: #A93F59;
+    background-color: @color2;
+    border-color: @color2;
     margin: 0px;
 }
 
